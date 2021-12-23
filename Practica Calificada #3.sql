@@ -132,40 +132,6 @@ END
 
 
 
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
--- =============================================
--- Author:		Grupo2: Tavo , Andres Bejarano ,Luis Esquivel
--- Create date: 23-12-2021
--- Description:	<3. Seleccionar las categorías que tengan más 5 productos. Mostrar el nombre de la categoría y el número de productos por parámetro>
--- =============================================
-CREATE PROCEDURE SP_PARTE#1_EJERICIO#3_GRUPO#2 
-	-- Add the parameters for the stored procedure here
-	@CategoriaID INT 
-	
-AS
-BEGIN
-	-- SET NOCOUNT ON added to prevent extra result sets from
-	-- interfering with SELECT statements.
-	SET NOCOUNT ON;
-
-    -- Insert statements for procedure here
-
- SELECT C.[CategoryID]  ,C.[CategoryName]  ,COUNT(*) AS 'Numero de productos'
-FROM [dbo].[Categories] AS C
-INNER JOIN [dbo].[Products] AS P
-ON C.[CategoryID] = P.[CategoryID]
-WHERE C.[CategoryID] = @CategoriaID 
-GROUP BY  C.[CategoryID], C.[CategoryName]
-having COUNT(*)  > 5
- 
-
-END
-GO
-
-
 
 
 
