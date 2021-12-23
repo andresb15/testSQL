@@ -1,5 +1,8 @@
 
---test
+Practica Calificada #3
+Grupo2: Tavo , Andres Bejarano ,Luis Esquivel 
+
+
 
 --Parte 1 Realice los siguientes procedimientos almacenados, SP_PARTE#_EJERICIO#_GRUPO#
 
