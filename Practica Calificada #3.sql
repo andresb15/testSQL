@@ -49,6 +49,40 @@ GO
 --2. Visualizar el máximo y mínimo precio de los productos por proveedor, mostrar el nombre de la
 --compañía proveedora por parámetro.
 
+USE [VLANort]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_PARTE#1_EJERICIO#2_GRUPO#2]    Script Date: 12/23/2021 2:55:58 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Grupo2: Tavo , Andres Bejarano ,Luis Esquivel
+-- Create date: 23-12-2021
+-- Description:	--2. Visualizar el máximo y mínimo precio de los productos por proveedor, mostrar el nombre de la
+--compañía proveedora por parámetro.
+
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_PARTE#1_EJERICIO#2_GRUPO#2] 
+	-- Add the parameters for the stored procedure here
+	@SupplierID INT
+
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	 SELECT S.[CompanyName],
+MAX(P.[UnitPrice]) AS 'PRECIO MAXIMO',
+MIN(P.[UnitPrice]) AS 'PRECIO MINIMO'
+ FROM [dbo].[Products] AS P
+INNER JOIN [dbo].[Suppliers] AS S
+ON P.[SupplierID] = S.[SupplierID]
+WHERE S.[SupplierID] = @SupplierID
+GROUP BY S.[CompanyName]
+
+END
 
 
 
