@@ -88,7 +88,7 @@ END
 
 
 
-3. Seleccionar las categorías que tengan más 5 productos. Mostrar el nombre de la categoría y el
+--3. Seleccionar las categorías que tengan más 5 productos. Mostrar el nombre de la categoría y el
 número de productos por parámetro
 
 USE [VLANort]
@@ -135,8 +135,62 @@ END
 
 
 
-4. Calcular cuántos clientes existen en cada País
-5. Calcular cuántos clientes existen en cada Ciudad.
+--4. Calcular cuántos clientes existen en cada País
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Grupo2: Tavo , Andres Bejarano ,Luis Esquivel
+-- Create date: 25-12-2021
+-- Description:	4. Calcular cuántos clientes existen en cada País
+-- =============================================
+CREATE PROCEDURE SP_PARTE#1_EJERICIO#4_GRUPO#2 
+
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+SELECT  [Country] as 'PAIS', COUNT(*) AS 'NUMERO DE CLIENTES'
+ from [dbo].[Customers]  group by [Country]
+
+END
+GO
+
+
+
+
+
+
+--5. Calcular cuántos clientes existen en cada Ciudad.
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Grupo2: Tavo , Andres Bejarano ,Luis Esquivel
+-- Create date: 25-12-2021
+-- Description:	5. Calcular cuántos clientes existen en cada Ciudad.
+-- =============================================
+CREATE PROCEDURE SP_PARTE#1_EJERICIO#5_GRUPO#2 
+
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+SELECT [City] as 'CIUDAD', COUNT(*) AS 'NUMERO DE CLIENTES'
+ from [dbo].[Customers]  group by [City]
+
+END
+GO
+
+
+
 6. Calcular cuántos proveedores existen en cada Ciudad y País
 7. Seleccionar cuantos proveedores tengo en cada país, considerando solo al nombre de los
 proveedores que comienzan con la letra X hasta la letra x(parámetro), además de mostrar
