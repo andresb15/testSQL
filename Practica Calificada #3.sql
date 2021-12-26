@@ -1,3 +1,8 @@
+********
+
+
+
+
 
 Practica Calificada #3
 Grupo2: Tavo , Andres Bejarano ,Luis Esquivel 
