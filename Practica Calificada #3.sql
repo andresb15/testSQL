@@ -215,15 +215,6 @@ END
 GO
 
 
---7. Seleccionar cuantos proveedores tengo en cada país, considerando solo al nombre de los
---proveedores que comienzan con la letra X hasta la letra x(parámetro), además de mostrar
---solo los paísesdonde tenga más de 2 proveedores (parámetro).
-
-
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 
 7. Seleccionar cuantos proveedores tengo en cada país, considerando solo al nombre de los
 proveedores que comienzan con la letra X hasta la letra x(parámetro), además de mostrar
