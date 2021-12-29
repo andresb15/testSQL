@@ -258,6 +258,39 @@ GO
 
 8. Mostrar el nombre de producto y en cuantas órdenes de compra se encuentra.
 
+USE [VLANort]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_PARTE#1_EJERICIO#8_GRUPO#2]    Script Date: 12/28/2021 10:52:11 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:	Grupo2: Tavo , Andres Bejarano ,Luis Esquivel
+-- Create date: 12-26-2021
+-- Description:8. Mostrar el nombre de producto y en cuantas órdenes de compra se encuentra.	
+-- =============================================
+ALTER PROCEDURE [dbo].[SP_PARTE#1_EJERICIO#8_GRUPO#2]
+	-- Add the parameters for the stored procedure here
+	@ProductoID int
+
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+		SELECT A.ProductName,COUNT (B.OrderID)as 'ORDENES DE COMPRA'
+FROM Products AS A
+INNER JOIN [Order Details] AS B
+ON A.ProductID=B.ProductID
+group by A.ProductName,A.ProductID
+HAVING A.ProductID=@ProductoID
+END
+
+
+
 --Parte 2 Realizar un CRUD SP_PARTE#_EJERICIO#_GRUPO#
 --• inserción de 20 registros en la tabla Clientes
 --• Actualizar 10 registros en la tabla Clientes
