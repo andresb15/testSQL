@@ -1,0 +1,23 @@
+1-DML INSERT, DELETE , UPDATE --Tablas 
+
+
+Create Trigger TR_Nombre
+on  DML -Nombre de la tabla 
+after INSERT, DELETE , UPDATE
+as
+
+begin
+
+---logica
+end
+
+2-DDL Create, Drop , Alter 
+Create Trigger TR_Nombre
+on  DDL -DATABASE
+after  Create, Drop , Alter 
+as
+
+begin
+
+---logica
+end
